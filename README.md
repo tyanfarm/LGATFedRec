@@ -14,6 +14,11 @@ cd LGATFedRec
 pip install -r requirements.txt
 ```
 
+4. Create logs folder
+``` sh
+mkdir log sh_result
+```
+
 ## Start training
 To start training, use the following command:
 
