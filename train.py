@@ -11,7 +11,7 @@ from utils import *
 
 # Training settings
 parser = argparse.ArgumentParser()
-parser.add_argument('--alias', type=str, default='fedgraph')
+parser.add_argument('--alias', type=str, default='LGATFedRec')
 parser.add_argument('--clients_sample_ratio', type=float, default=1.0)
 parser.add_argument('--clients_sample_num', type=int, default=0)
 parser.add_argument('--num_round', type=int, default=100)
@@ -149,18 +149,18 @@ str = current_time + '-' + 'layers: ' + str(config['layers']) + '-' + 'lr: ' + s
       'batch_size: ' + str(config['batch_size']) + '-' + 'hr: ' + str(hit_ratio_list[final_test_round]) + '-' \
       + 'ndcg: ' + str(ndcg_list[final_test_round]) + '-' + 'best_round: ' + str(final_test_round) + '-' + \
       'similarity_metric: ' + str(config['similarity_metric']) + '-' + 'neighborhood_threshold: ' + \
-      str(config['neighborhood_threshold']) + '-' + 'reg: ' + str(config['reg'])
+      str(config['neighborhood_threshold']) + '-' + 'reg: ' + str(config['reg']) + ' - ' + 'method: ' + config['alias']
 file_name = "sh_result/"+'-'+config['dataset']+".txt"
 with open(file_name, 'a') as file:
     file.write(str + '\n')
 import subprocess
 
 # Save results to discord
-WEBHOOK_URL = "https://discord.com/api/webhooks/1376105337786077346/SzlKXpbXYrDEr3QHccQ-5DsphNIA23k2iK5LI_zXVSPI_4Dy49dxDzj5Q27y8UB7p7o8"
+WEBHOOK_URL = "https://discord.com/api/webhooks/1376133569893896223/dhulCjoKgQdMcFwYQ8tKZe9LTJ85P7yXANuArjwRrd-IMVtj8FR8qv30Rdp_HzT6dBd_"
 result_best = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[final_test_round],
                                                              ndcg_list[final_test_round],
                                                              final_test_round)
-message_discord = f"**{config['dataset']}**\n```{result_best}```\n"
+message_discord = f"**{config['dataset']}**\n```{str}\n{result_best}```\n"
 send_webhook_message(WEBHOOK_URL, result_best, username="Notification Bot")
 
 logging.info('fedgraph')
