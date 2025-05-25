@@ -1,0 +1,6 @@
+numpy
+torch
+pandas
+tensorboardX
+scikit-learn
+requests
