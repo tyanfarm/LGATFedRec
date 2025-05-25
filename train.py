@@ -155,26 +155,13 @@ with open(file_name, 'a') as file:
     file.write(str + '\n')
 import subprocess
 
-# def send_email(result):
-#     try:
-#         # Construct the mail command
-#         cmd = f'echo "{result}" | mail -s "Job Completed" thanhpitbull@gmail.com'
-
-#         # Run the command and check for errors
-#         completed_process = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-#         print("Email sent successfully.")
-#     except subprocess.CalledProcessError as e:
-#         print("Failed to send email.")
-#         print("Return code:", e.returncode)
-#         print("Error output:", e.stderr.decode())
-
-# send_email("Da chay xong")
+# Save results to discord
 WEBHOOK_URL = "https://discord.com/api/webhooks/1376105337786077346/SzlKXpbXYrDEr3QHccQ-5DsphNIA23k2iK5LI_zXVSPI_4Dy49dxDzj5Q27y8UB7p7o8"
-result = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[final_test_round],
+result_best = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[final_test_round],
                                                              ndcg_list[final_test_round],
                                                              final_test_round)
-send_webhook_message(WEBHOOK_URL, result, username="BotNoti")
+message_discord = f"**{config['dataset']}**\n```{result_best}```\n"
+send_webhook_message(WEBHOOK_URL, result_best, username="Notification Bot")
 
 logging.info('fedgraph')
 logging.info('clients_sample_ratio: {}, lr_eta: {}, bz: {}, lr: {}, dataset: {}, layers: {}, negatives: {}, '
@@ -185,6 +172,4 @@ logging.info('clients_sample_ratio: {}, lr_eta: {}, bz: {}, lr: {}, dataset: {},
 
 logging.info('hit_list: {}'.format(hit_ratio_list))
 logging.info('ndcg_list: {}'.format(ndcg_list))
-logging.info('Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[final_test_round],
-                                                             ndcg_list[final_test_round],
-                                                             final_test_round))
+logging.info(result_best)
