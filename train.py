@@ -63,6 +63,12 @@ else:
     pass
 engine = LightNeuMfEngine(config)
 
+# Create log folders.
+folders = ["log", "sh_result"]
+for folder in folders:
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
 # Logging.
 path = 'log/'
 current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
