@@ -148,14 +148,14 @@ for round in range(config['num_round']):
         final_test_round = round
 
 current_time = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
-str = current_time + '-' + 'layers: ' + str(config['layers']) + '-' + 'lr: ' + str(config['lr']) + '-' + \
-      'clients_sample_ratio: ' + str(config['clients_sample_ratio']) + '-' + 'num_round: ' + str(config['num_round']) \
-      + '-' 'neighborhood_size: ' + str(config['neighborhood_size']) + '-' + 'mp_layers: ' + str(config['mp_layers']) \
-      + '-' + 'negatives: ' + str(config['num_negative']) + '-' + 'lr_eta: ' + str(config['lr_eta']) + '-' + \
-      'batch_size: ' + str(config['batch_size']) + '-' + 'hr: ' + str(hit_ratio_list[final_test_round]) + '-' \
-      + 'ndcg: ' + str(ndcg_list[final_test_round]) + '-' + 'best_round: ' + str(final_test_round) + '-' + \
-      'similarity_metric: ' + str(config['similarity_metric']) + '-' + 'neighborhood_threshold: ' + \
-      str(config['neighborhood_threshold']) + '-' + 'reg: ' + str(config['reg']) + ' - ' + 'reg_gmf: ' + str(config['reg_gmf']) + ' - ' + 'method: ' + config['alias']
+str = current_time + ' - ' + 'layers: ' + str(config['layers']) + ' - ' + 'lr: ' + str(config['lr']) + ' - ' + \
+      'clients_sample_ratio: ' + str(config['clients_sample_ratio']) + ' - ' + 'num_round: ' + str(config['num_round']) \
+      + ' - ' 'neighborhood_size: ' + str(config['neighborhood_size']) + ' - ' + 'mp_layers: ' + str(config['mp_layers']) \
+      + ' - ' + 'negatives: ' + str(config['num_negative']) + ' - ' + 'lr_eta: ' + str(config['lr_eta']) + ' - ' + \
+      'batch_size: ' + str(config['batch_size']) + ' - ' + 'hr: ' + str(hit_ratio_list[final_test_round]) + ' - ' \
+      + 'ndcg: ' + str(ndcg_list[final_test_round]) + ' - ' + 'best_round: ' + str(final_test_round) + ' - ' + \
+      'similarity_metric: ' + str(config['similarity_metric']) + ' - ' + 'neighborhood_threshold: ' + \
+      str(config['neighborhood_threshold']) + ' - ' + 'reg: ' + str(config['reg']) + ' - ' + 'reg_gmf: ' + str(config['reg_gmf']) + ' - ' + 'method: ' + config['alias']
 file_name = "sh_result/"+'-'+config['dataset']+".txt"
 with open(file_name, 'a') as file:
     file.write(str + '\n')
