@@ -167,7 +167,7 @@ result_best = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[fin
                                                              ndcg_list[final_test_round],
                                                              final_test_round)
 message_discord = f"**{config['dataset']}**\n```{str}\n{result_best}```\n"
-send_webhook_message(WEBHOOK_URL, result_best, username="Notification Bot")
+send_webhook_message(WEBHOOK_URL, message_discord, username="Notification Bot")
 
 logging.info('fedgraph')
 logging.info('clients_sample_ratio: {}, lr_eta: {}, bz: {}, lr: {}, dataset: {}, layers: {}, negatives: {}, '
