@@ -166,7 +166,8 @@ WEBHOOK_URL = "https://discord.com/api/webhooks/1376133569893896223/dhulCjoKgQdM
 result_best = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[final_test_round],
                                                              ndcg_list[final_test_round],
                                                              final_test_round)
-message_discord = f"**{config['dataset']}**\n```{str}\n{result_best}```\n"
+str += '\n' + f"test hr list: {hit_ratio_list}" + '\n' + f"test ndcg list: {ndcg_list}"
+message_discord = f"\n**{config['dataset']}**\n```{str}\n{result_best}```\n"
 send_webhook_message(WEBHOOK_URL, message_discord, username="Notification Bot")
 
 logging.info('fedgraph')
