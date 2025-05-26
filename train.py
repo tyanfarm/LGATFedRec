@@ -155,7 +155,7 @@ str = current_time + '-' + 'layers: ' + str(config['layers']) + '-' + 'lr: ' + s
       'batch_size: ' + str(config['batch_size']) + '-' + 'hr: ' + str(hit_ratio_list[final_test_round]) + '-' \
       + 'ndcg: ' + str(ndcg_list[final_test_round]) + '-' + 'best_round: ' + str(final_test_round) + '-' + \
       'similarity_metric: ' + str(config['similarity_metric']) + '-' + 'neighborhood_threshold: ' + \
-      str(config['neighborhood_threshold']) + '-' + 'reg: ' + str(config['reg']) + ' - ' + 'method: ' + config['alias']
+      str(config['neighborhood_threshold']) + '-' + 'reg: ' + str(config['reg']) + ' - ' + 'reg_gmf: ' + str(config['reg_gmf']) + ' - ' + 'method: ' + config['alias']
 file_name = "sh_result/"+'-'+config['dataset']+".txt"
 with open(file_name, 'a') as file:
     file.write(str + '\n')
