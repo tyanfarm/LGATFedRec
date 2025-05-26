@@ -167,7 +167,7 @@ result_best = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[fin
                                                              ndcg_list[final_test_round],
                                                              final_test_round)
 str += '\n' + f"test hr list: {hit_ratio_list}" + '\n' + f"test ndcg list: {ndcg_list}"
-message_discord = f"\n**{config['dataset']}**\n```{str}\n{result_best}```\n"
+message_discord = f"\n**Dataset: {config['dataset']}**\n```{str}\n{result_best}```\n"
 send_webhook_message(WEBHOOK_URL, message_discord, username="Notification Bot")
 
 logging.info('fedgraph')
