@@ -1,3 +1,6 @@
+## Requirements
+- Python version 3.11
+
 ## Installation
 Install the dependencies:
 ``` sh
