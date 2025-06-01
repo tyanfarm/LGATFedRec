@@ -97,7 +97,7 @@ def select_topk_neighboehood(user_realtion_graph, neighborhood_size, neighborhoo
                 topk_user_relation_graph[user][i] = 1/neighborhood_size
     else:
         # similarity_threshold = np.mean(user_realtion_graph)*neighborhood_threshold
-        similarity_threshold = np.sum(user_realtion_graph) / (user_realtion_graph.shape[0] * user_realtion_graph.shape[1] - user_realtion_graph.shape[0])
+        similarity_threshold = np.sum(user_realtion_graph) / (user_realtion_graph.shape[0] * user_realtion_graph.shape[1] - user_realtion_graph.shape[0]) *  neighborhood_threshold
         for i in range(user_realtion_graph.shape[0]):
             high_num = np.sum(user_realtion_graph[i] > similarity_threshold)
             if high_num > 0:
