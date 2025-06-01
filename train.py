@@ -161,14 +161,9 @@ with open(file_name, 'a') as file:
     file.write(str + '\n')
 import subprocess
 
-# Save results to discord
-WEBHOOK_URL = "https://discord.com/api/webhooks/1376133569893896223/dhulCjoKgQdMcFwYQ8tKZe9LTJ85P7yXANuArjwRrd-IMVtj8FR8qv30Rdp_HzT6dBd_"
 result_best = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[final_test_round],
                                                              ndcg_list[final_test_round],
                                                              final_test_round)
-# str += '\n' + f"test hr list: {hit_ratio_list}" + '\n' + f"test ndcg list: {ndcg_list}"
-message_discord = f"\n**Dataset: {config['dataset']}**\n```{str}\n{result_best}```\n"
-send_webhook_message(WEBHOOK_URL, message_discord, username="Notification Bot")
 
 logging.info('fedgraph')
 logging.info('clients_sample_ratio: {}, lr_eta: {}, bz: {}, lr: {}, dataset: {}, layers: {}, negatives: {}, '
