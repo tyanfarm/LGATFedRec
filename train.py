@@ -162,7 +162,7 @@ with open(file_name, 'a') as file:
 import subprocess
 
 # Save results to discord
-WEBHOOK_URL = "https://discord.com/api/webhooks/1376133569893896223/dhulCjoKgQdMcFwYQ8tKZe9LTJ85P7yXANuArjwRrd-IMVtj8FR8qv30Rdp_HzT6dBd_"
+WEBHOOK_URL = "https://discord.com/api/webhooks/1384562839594991847/bvJUcAJJkRyktARpWpKpKKCKgHP8Jbudihv9n35mxO3uvRHQTeyw951kbdCuxejBloOD"
 result_best = 'Best test hr: {}, ndcg: {} at round {}'.format(hit_ratio_list[final_test_round],
                                                              ndcg_list[final_test_round],
                                                              final_test_round)
